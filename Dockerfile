@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y wget unzip && \
 RUN unzip emqttd-*.zip
 WORKDIR /opt/emqttd
 RUN adduser --system --disabled-password --disabled-login emqtt
+RUN chown -R emqtt:emqtt emqttd
 USER emqtt
 EXPOSE 1883
-CMD ["bin/emqttd console"]
+CMD ["./bin/emqttd console"]
