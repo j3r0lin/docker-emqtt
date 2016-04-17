@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 
 WORKDIR /opt/
-RUN wget http://emqtt.io/downloads/ubuntu
+RUN wget http://emqtt.io/static/brokers/emqttd-ubuntu64-1.0.1-beta-20160416.zip
 RUN unzip emqttd-*.zip
 WORKDIR /opt/emqttd
 RUN adduser --system --disabled-password --disabled-login emqtt
